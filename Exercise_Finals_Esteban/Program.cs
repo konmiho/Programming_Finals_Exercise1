@@ -21,6 +21,7 @@ namespace Exercise_Finals_Esteban
             int num1; // UPPER LIMIT
             int num2; // LOWER LIMIT
 
+            // UPPER LIMIT
             while (true)
             {
                 try
@@ -54,15 +55,17 @@ namespace Exercise_Finals_Esteban
                 Console.Clear();
             }
 
+
+            // LOWER LIMIT
             while (true)
             {
                 Console.WriteLine($"════════════════════════════════════════════════════\n\nUPPER LIMIT:\t{num1}");
-                
+                Console.Write($"LOWER LIMIT CANNOT BE GREATER THAN UPPER LIMIT\n\nPlease input a number (0 - 100)\nLOWER LIMIT:\t");
+                num2 = int.Parse(Console.ReadLine());
+
                 // CONDITIONS FOR LOWER LIMIT INPUT
                 try
                 {
-                    Console.Write($"LOWER LIMIT CANNOT BE GREATER THAN UPPER LIMIT\n\nPlease input a number (0 - 100)\nLOWER LIMIT:\t");
-                    num2 = int.Parse(Console.ReadLine());
                     if (num2 > 100)
                     {
                         Console.WriteLine("Input should not be greater than 100. Press Enter to Input Again.");
@@ -92,9 +95,11 @@ namespace Exercise_Finals_Esteban
                 Console.Clear();
             }
 
+
+            // SORTING AND DISPLAYING
             List<int> numbersBetween = new List<int>(); // LIST OF NUMBERS BETWEEN UPPER AND LOWER INPUT
             int temp = 0;
-            
+
             for (int x = 0; x < numberList.Count; x++) // COLLECTING NUMBERS
             {
                 if (numberList[x] < num1 && numberList[x] > num2)
