@@ -72,7 +72,7 @@ namespace Exercise_Finals_Esteban
                     }
                     else if (num2 < 0)
                     {
-                        Console.WriteLine("Input should not be less than or equal to 0. Press Enter to Input Again.");
+                        Console.WriteLine("Input should not be less than 0. Press Enter to Input Again.");
                     }
                     else if (num2 >= 0 && num2 <= 100 && num2 < num1)
                     {
@@ -102,7 +102,7 @@ namespace Exercise_Finals_Esteban
 
             for (int x = 0; x < numberList.Count; x++) // COLLECTING NUMBERS
             {
-                if (numberList[x] < num1 && numberList[x] > num2)
+                if (numberList[x] <= num1 && numberList[x] >= num2)
                 {
                     numbersBetween.Add(numberList[x]);
                 }
@@ -124,20 +124,14 @@ namespace Exercise_Finals_Esteban
 
             // DISPLAYING NUMBERS
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"- PRESS ENTER TO DISPLAY THE NUMBERS BETWEEN {num2} AND {num1} -");
+            Console.WriteLine($"- PRESS ENTER TO DISPLAY THE NUMBERS OF {num2} AND {num1} -");
             Console.ReadLine(); Console.Clear();
-            Console.WriteLine($"- DISPLAYING THE NUMBERS BETWEEN {num2} AND {num1} -\n");
-            if (numbersBetween.Count == 0)
+            Console.WriteLine($"- DISPLAYING THE NUMBERS OF {num2} AND {num1} -\n");
+            
+            for (int x = 0; x < numbersBetween.Count; x++)
             {
-                Console.WriteLine($"- THERE ARE NO NUMBERS BETWEEN {num2} AND {num1} -");
+                Console.Write(numbersBetween[x] + "  ");
             }
-            else
-            {
-                for (int x = 0; x < numbersBetween.Count; x++)
-                {
-                    Console.Write(numbersBetween[x] + "  ");
-                }
-            } 
             Console.ReadKey();
         }
     }
